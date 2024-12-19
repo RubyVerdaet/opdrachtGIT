@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+function controle(teControlerenTekst) {
+       if(teControlerenTekst === null) {
+        document.write("Je hebt geannuleerd");
+        return false;
+        
+       }
+       else if(teControlerenTekst === undefined || teControlerenTekst.length === 0) {
+        document.write("Je niets ingegeven");
+        return false;
+       }
+
+       else if(teControlerenTekst.length < 2) {
+        document.write("De naam is te kort");
+        return false;
+       }
+       else {
+        teControlerenTekst = teControlerenTekst.charAt(0).toUpperCase() + teControlerenTekst.substring(1);
+        return teControlerenTekst
+       }
+}
+
+let voornaam = controle(prompt("Geef je voornaam in ajb."));
+let achternaam;
+if (voornaam != false) {
+    achternaam = controle(prompt("Geef je achternaam in ajb."));
+}
+
+if (achternaam != false) {
+    document.write(`Hey ${voornaam} ${achternaam}.`)
+}
+
+            
+    </script>
+</head>
+<body>
+
+</body>
+</html>

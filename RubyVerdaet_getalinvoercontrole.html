@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    "use strict";
+
+        const controleAantal = (teControlerenAantal) => {
+            if(teControlerenAantal === "" || teControlerenAantal === undefined) {
+                document.write("Je hebt niets ingevuld");
+                return false;
+            }
+            else if(teControlerenAantal === null) {
+                document.write("Je hebt geannuleerd");
+                return false;
+            }
+            else if(isNaN(teControlerenAantal) === true) {
+                document.write("Dit is geen correcte ingave.");
+                return false;
+            }
+            else {
+                return teControlerenAantal;
+            }
+            
+        }
+
+        const controleGetal = (teControlerenGetal) => {
+            if(teControlerenGetal === null || teControlerenGetal === "" || teControlerenGetal === undefined || isNaN(teControlerenGetal) === true) {
+                return "fout";
+            }
+            else {
+                return teControlerenGetal;
+            }
+        
+
+        }
+
+        let getallen = [];
+        let aantal = prompt("Hoeveel getallen wil je ingeven?");
+        let aantalGetallen = controleAantal(aantal);
+        let i
+
+        if(aantalGetallen != false) {
+            for(i = 0; i < aantalGetallen; i++) {
+                const nieuwGetal = prompt(`Geef getal nummer ${i + 1} in.`);
+                const resultaat = controleGetal(nieuwGetal);
+                getallen.push(resultaat);
+            }
+            document.write(`${getallen}`);
+        }
+
+    
+    </script>
+</head>
+<body>
+
+</body>
+</html>
